@@ -15,7 +15,7 @@ import {
 //         dispatch({ type: GET_POKEMONS, payload: response });
 //       };       
 // }
-const url ="http://localhost:3000";// variable con la direccion de la BD 
+const url ="http://localhost:3001";// variable con la direccion de la BD 
 
 export function getPokemons() {
   return async function (dispatch) {

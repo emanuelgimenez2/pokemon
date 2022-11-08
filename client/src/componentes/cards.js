@@ -27,13 +27,13 @@ console.log(initialData)
     setCurrentPage(pageNumber);
   };
 
-  if (currentDog.length === 0) {
-    return (
-      <div className="loader">
-        <img src={loader} alt="loader" />
-      </div>
-    );
-  }
+  // if (currentDog.length === 0) {
+  //   return (
+  //     <div className="loader">
+  //       <img src={loader} alt="loader" />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
@@ -45,19 +45,19 @@ console.log(initialData)
         />
       </div>
       <div className="container-cards">
-        {currentDog.map((dog, index) => {
-          return (
+        {/* {currentDog.map((dog, index) => {
+          return ( */}
             <Card
-              height={dog?.height}
-              weight={dog?.weight}
-              id={dog?.id}
-              image={dog.image ? dog.image : loader}
-              name={dog?.name}
-              temperament={dog.temperament}
-              key={dog?.id}
+              // height={dog?.height}
+              // weight={dog?.weight}
+              // id={dog?.id}
+              // image={dog.image ? dog.image : loader}
+              // name={dog?.name}
+              // temperament={dog.temperament}
+              // key={dog?.id}
             />
-          );
-        })}
+          {/* );
+        })} */}
       </div>
     </div>
   );
