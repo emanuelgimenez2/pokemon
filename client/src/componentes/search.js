@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getDogName } from "../../actions/index";
 
-import "./search.css";
+
+
 
 export default function Search({ data }) {
   const dispatch = useDispatch();
@@ -13,15 +13,15 @@ export default function Search({ data }) {
     setName(e.target.value);
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    if (name.length === 0) {
-      return alert("Ingresa un valor");
-    } else {
-      await dispatch(getDogName(name));
-      setName("");
-    }
-  }
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   if (name.length === 0) {
+  //     return alert("Ingresa un valor");
+  //   } else {
+  //     await dispatch(getDogName(name));
+  //     setName("");
+  //   }
+  // }
 
   return (
     <div className="container-search">
@@ -29,14 +29,14 @@ export default function Search({ data }) {
         <input
           type="text"
           placeholder="Buscar..."
-          onKeyPress={(e) => e.key === "Enter" && handleSubmit(e)}
-          onChange={(e) => handleInputChange(e)}
+          // onKeyPress={(e) => e.key === "Enter" && handleSubmit(e)}
+          // onChange={(e) => handleInputChange(e)}
           value={name}
           className="input-search"
         />
         <button
           type="submit"
-          onClick={(e) => handleSubmit(e)}
+          // onClick={(e) => handleSubmit(e)}
           className="button-search"
         >SEARCH</button>
       </div>

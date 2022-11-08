@@ -14,6 +14,8 @@ import Pagination from "./pagination";
 export default function Cards() {
  
 const initialData = useSelector((state) => state.pokemons);
+
+console.log(initialData)
   /********************Paginado****************************/
   const dogsPerPage = 12;//cantidad de perros por pagina
   const [currentPage, setCurrentPage] = useState(1);//pagina actual

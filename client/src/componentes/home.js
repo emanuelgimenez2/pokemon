@@ -1,32 +1,32 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import Cards from "./cards";
+import Filter from "./filter";
+import Nav from "./navbar";
 
 export default function Home() {
-
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //   dispatch(getDogs());
-    // }, []);
+  const Data = useSelector((state) => state.pokemons);
+  
+console.log(Data)
 
   return (
     <div className="container-home">
       <div className="body-home">
         
        
-      {/* <div className="navigation-home">
+       <div className="navigation-home">
         <Nav />
       </div>
-      <div className="body-home">
+       <div className="body-home">
         <Filter />
-      </div>
+      </div> 
       <div className="body-home">
         <Cards />
-      </div> */}
-      {/* <div>
+      </div> 
+       {/* <div>
         <Footer />
-      </div> */}
+      </div>   */}
     </div>
       </div>
  
