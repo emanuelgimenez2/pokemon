@@ -7,8 +7,6 @@ import Nav from "./navbar";
 
 export default function Home() {
   const Data = useSelector((state) => state.pokemons);
-  
-console.log(Data)
 
   return (
     <div className="container-home">

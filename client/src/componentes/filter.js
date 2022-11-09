@@ -1,12 +1,28 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-
-
+import { ORDER_BY_NAME } from "../store/type";
 
 export default function Filter() {
+  const dispatch = useDispatch();
   const temperamentsData = useSelector((state) => state.pokemons);
+  const [filters, setFilters] = useState({
+    orderPokemons: "",
+    weightPokemons: "",
+    temperamentPokemons: "",
+    existPokemons: "",
+  });
+
+console.log("filters000000000000000000000000000000>",filters)
+  const handleInputChange = (e) => {
+    setFilters({
+      ...filters,
+      [e.target.name]: e.target.value,
+    });
+  };
+  useEffect(() => {
+    filters.orderPokemons && dispatch({type: ORDER_BY_NAME, payload: filters.orderPokemons});
+  }, [filters]);
 
   //*******************Filtros******************* */
 
@@ -14,46 +30,47 @@ export default function Filter() {
     <div className="card-filter">
       <div className="filters">
         <select
-          //   onChange={(e) => setOrder(e.target.value)}
+          name="orderPokemons"
+          value={filters.orderPokemons}
+          // defaultValue={filters.orderPokemons}
+          onChange={(e) => {
+            handleInputChange(e);
+          }}
           className="select-filter"
         >
-          <option>Ordenar Alfabeticamente</option>
-          <option value="asc">A - Z</option>
-
-          <option value="desc">Z - A</option>
+          <option>A-Z</option>
+          <option>Z-A</option>
         </select>
 
         <select
+          value={filters.weightPokemons}
           className="select-filter"
-          //   onChange={(e) => setWeight(e.target.value)}
+          onChange={(e) => {
+            handleInputChange(e);
+          }}
         >
           <option>Ordenar por peso</option>
-          <option value="+peso">Mayor Peso</option>
-
-          <option value="-peso">Menor Peso</option>
+          <option>ordnar por peso</option>
         </select>
         <select
-          //   onChange={(e) => setTemperament(e.target.value)}
+          value={filters.temperamentPokemons}
+          onChange={(e) => {
+            handleInputChange(e);
+          }}
           className="select-filter"
         >
           <option>Temperamentos</option>
-          {temperamentsData.map((temp, i) => (
-            <option value={temp} key={i}>
-              {temp}
-            </option>
-          ))}
+          <option>temperamentos</option>
         </select>
 
         <select
-          defaultValue={"DEFAULT"}
-          //   onChange={(e) => setCreated(e.target.value)}
+          onChange={(e) => {
+            handleInputChange(e);
+          }}
           className="select-filter"
+          value={filters.existPokemons}
         >
-          <option value="DEFAULT" disabled>
-            Creados/API
-          </option>
-          <option value="Api">API</option>
-          <option value="Db">Creados</option>
+          <option>esitpokemon</option>
         </select>
       </div>
     </div>

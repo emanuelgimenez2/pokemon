@@ -21,8 +21,8 @@ export function getPokemons() {
   return async function (dispatch) {
     // Le pasamos la ruta del back para que me traiga todos los dogs.
 
-      var json = await axios.get(`${url}/pokemons`);
-        console.log(json.data)
+     const json = await axios.get(`${url}/pokemons`);
+        console.log("====================================>",json.data)
 
     return dispatch({
       type: GET_POKEMONS,

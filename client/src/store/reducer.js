@@ -1,19 +1,15 @@
 import {
   GET_POKEMONS,
-  //   GET_DOGS,
-  //   GET_TEMPERAMENTS,
-  //   FILTER_BY_TEMPERAMENTS,
-  //   GET_DOG_DETAIL,
-  //   FILTER_CREATED,
-  //   ORDER_BY_NAME,
-  //   ORDER_BY_WEIGHT,
-  //   POST_DOG,
-  //   POST_DOG_SUCESS,
-  //   GET_DOG_BY_NAME,
+  FILTER_BY_TEMPERAMENTS,
+  GET_DOG_DETAIL,
+  FILTER_CREATED,
+  ORDER_BY_NAME,
+  ORDER_BY_WEIGHT,
 } from "../store/type";
 
 const initialState = {
   pokemons: [],
+  pokemonsByName: [],
 };
 
 function SortArrayAZ(x, y) {
@@ -44,41 +40,41 @@ function rootReducer(state = initialState, action) {
         pokemons: action.payload,
       };
 
-    //     case FILTER_BY_TEMPERAMENTS:
-    //       const alldogs = state.dogs;
+    case FILTER_BY_TEMPERAMENTS:
+      const alldogs = state.dogs;
 
-    //       const temperamentsFiltered = alldogs.filter((el) =>
-    //         el.temperament[0].name.includes(action.payload)
-    //       );
+      const temperamentsFiltered = alldogs.filter((el) =>
+        el.temperament[0].name.includes(action.payload)
+      );
 
-    //       return {
-    //         ...state,
-    //         dogs: temperamentsFiltered,
-    //         dogsByTemperament: temperamentsFiltered,
-    //       };
+      return {
+        ...state,
+        dogs: temperamentsFiltered,
+        dogsByTemperament: temperamentsFiltered,
+      };
 
-    //     case FILTER_CREATED:
-    //       const createdFilter =
-    //         action.payload === "Db"
-    //           ? state.dogs.filter((dog) => dog.createdAtDb === null)
-    //           : state.dogs.filter((dog) => typeof dog.id === "number");
+    case FILTER_CREATED:
+      const createdFilter =
+        action.payload === "Db"
+          ? state.dogs.filter((dog) => dog.createdAtDb === null)
+          : state.dogs.filter((dog) => typeof dog.id === "number");
 
-    //       return {
-    //         ...state,
-    //         dogs: createdFilter,
-    //       };
+      return {
+        ...state,
+        dogs: createdFilter,
+      };
 
-    //     case ORDER_BY_NAME:
-    //       const orderByName =
-    //         action.payload === "asc"
-    //           ? state.dogs.sort(SortArrayAZ)
-    //           : state.dogs.sort(SortArrayZA);
+    case ORDER_BY_NAME:
+      const orderByName =
+        action.payload === "A-Z"
+          ? state.pokemons.sort(SortArrayAZ)
+          : state.pokemons.sort(SortArrayZA);
 
-    //       return {
-    //         ...state,
-    //         dogs: orderByName,
-    //         dogsByName: orderByName,
-    //
+      return {
+        ...state,
+        pokemons: orderByName,
+        pokemonsByName: orderByName,
+      };
 
     default:
       return state;

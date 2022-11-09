@@ -1,0 +1,26 @@
+.contenedor_total_de_card{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    box-sizing: border-box;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 20px;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+.img_de_pkemon_en_card{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}

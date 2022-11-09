@@ -30,7 +30,7 @@ export default function Search({ data }) {
           type="text"
           placeholder="Buscar..."
           // onKeyPress={(e) => e.key === "Enter" && handleSubmit(e)}
-          // onChange={(e) => handleInputChange(e)}
+          onChange={(e) => handleInputChange(e)}
           value={name}
           className="input-search"
         />
