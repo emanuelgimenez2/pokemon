@@ -11,6 +11,10 @@ export default function Filter() {
     weightPokemons: "",
     temperamentPokemons: "",
     existPokemons: "",
+
+
+
+    
   });
 
 console.log("filters000000000000000000000000000000>",filters)
@@ -25,6 +29,9 @@ console.log("filters000000000000000000000000000000>",filters)
   }, [filters]);
 
   //*******************Filtros******************* */
+
+
+
 
   return (
     <div className="card-filter">

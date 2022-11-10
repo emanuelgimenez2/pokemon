@@ -24,6 +24,9 @@ const Card = ({ image, name, types, id }) => {
                 {types.map((e,i) => (
                   <span key={i}>{e.name}</span>
                 ))}
+
+
+                
             </div>
           </div>
         </div>

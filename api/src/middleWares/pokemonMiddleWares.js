@@ -10,7 +10,7 @@ const agent = new https.Agent({
 const fechingData = async () => {
     const pokemons = [];
     for (var i = 1; i <= POKEMON_NUMBER; i++) {
-        let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        let url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
         const responseApi = axios.get(url, {httpsAgent: agent});
         pokemons.push(responseApi);
     }

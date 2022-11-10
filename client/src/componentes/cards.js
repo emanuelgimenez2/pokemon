@@ -13,6 +13,8 @@ export default function Cards() {
 
   /********************Paginado****************************/
   const dogsPerPage = 12; //cantidad de perros por pagina
+
+  
   const [currentPage, setCurrentPage] = useState(1); //pagina actual
   const indexOfLastDog = currentPage * dogsPerPage; //indice del ultimo perro
   const indexOfFirstDog = indexOfLastDog - dogsPerPage; //indice del primer perro
