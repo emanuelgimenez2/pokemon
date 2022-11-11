@@ -5,38 +5,37 @@ import { ORDER_BY_NAME } from "../store/type";
 
 export default function Filter() {
   const dispatch = useDispatch();
-  const temperamentsData = useSelector((state) => state.pokemons);
+  // const temperamentsData = useSelector((state) => state.pokemons);
+  const pokemonForName = useSelector((state) => state.pokemonsByName);
+
   const [filters, setFilters] = useState({
-    orderPokemons: "",
+    orderPokemons: "DEFAULT",
     weightPokemons: "",
     temperamentPokemons: "",
     existPokemons: "",
-
-
-
-    
   });
+  console.log("filters", filters);
 
-console.log("filters000000000000000000000000000000>",filters)
+  
   const handleInputChange = (e) => {
     setFilters({
       ...filters,
       [e.target.name]: e.target.value,
     });
+
   };
   useEffect(() => {
-    filters.orderPokemons && dispatch({type: ORDER_BY_NAME, payload: filters.orderPokemons});
+    filters.orderPokemons &&
+      dispatch({ type: ORDER_BY_NAME, payload: filters.orderPokemons });
   }, [filters]);
 
   //*******************Filtros******************* */
-
-
-
 
   return (
     <div className="card-filter">
       <div className="filters">
         <select
+        // defaultValue={'DEFAULT'}
           name="orderPokemons"
           value={filters.orderPokemons}
           // defaultValue={filters.orderPokemons}
@@ -45,19 +44,21 @@ console.log("filters000000000000000000000000000000>",filters)
           }}
           className="select-filter"
         >
+          <option value="DEFAULT" >orden alfabetico</option>
           <option>A-Z</option>
           <option>Z-A</option>
         </select>
 
-        <select
+        {/* <select
           value={filters.weightPokemons}
           className="select-filter"
           onChange={(e) => {
             handleInputChange(e);
           }}
         >
-          <option>Ordenar por peso</option>
-          <option>ordnar por peso</option>
+          <option selected>ataque</option>
+          <option>Menor ataque</option>
+          <option>Mayor ataque</option>
         </select>
         <select
           value={filters.temperamentPokemons}
@@ -66,6 +67,7 @@ console.log("filters000000000000000000000000000000>",filters)
           }}
           className="select-filter"
         >
+          <option selected>Tipos</option>
           <option>Temperamentos</option>
           <option>temperamentos</option>
         </select>
@@ -77,8 +79,9 @@ console.log("filters000000000000000000000000000000>",filters)
           className="select-filter"
           value={filters.existPokemons}
         >
+          <option selected>creados o existentes</option>
           <option>esitpokemon</option>
-        </select>
+        </select> */}
       </div>
     </div>
   );

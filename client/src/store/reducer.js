@@ -9,7 +9,8 @@ import {
 
 const initialState = {
   pokemons: [],
-  pokemonsByName: [],
+  // pokemonsByName: [],
+  // pokemoncreate: [],
 };
 
 function SortArrayAZ(x, y) {
@@ -61,7 +62,7 @@ function rootReducer(state = initialState, action) {
 
       return {
         ...state,
-        dogs: createdFilter,
+        pokemoncreate: createdFilter,
       };
 
     case ORDER_BY_NAME:
@@ -71,9 +72,8 @@ function rootReducer(state = initialState, action) {
           : state.pokemons.sort(SortArrayZA);
 
       return {
-        ...state,
+        ...state,       
         pokemons: orderByName,
-        pokemonsByName: orderByName,
       };
 
     default:

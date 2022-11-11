@@ -21,7 +21,7 @@ export default function Nav() {
         </div>
 
         <div>
-          <svg
+         {/*  <svg
             className="waves"
             viewBox="0 24 150 28"
             preserveAspectRatio="none"
@@ -53,7 +53,7 @@ export default function Nav() {
               />
               <use href="#gentle-wave" x="48" y="7" fill="#fff" />
             </g>
-          </svg>
+          </svg> */}
         </div>
       </div>
     </div>

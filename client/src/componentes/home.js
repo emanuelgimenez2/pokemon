@@ -17,7 +17,7 @@ export default function Home() {
         <Nav />
       </div>
        <div className="body-home">
-        <Filter />
+        <Filter  />
       </div> 
       <div className="body-home">
         <Cards />
